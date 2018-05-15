@@ -1,0 +1,43 @@
+.titleIcon{
+    font-size: 3rem;
+    color:#303f9f ;
+}
+
+button{
+    background:#d32f2f;
+    color:white;
+}
+
+.mobilecontent{
+    max-width:50rem;
+    display:flex;
+}
+
+.form {
+    min-width: 150px;
+    max-width: 400px;
+    width: 100%;
+  }
+  
+  .full-width {
+    width: 100%;
+  }
+  .half-width{
+      width:50%;
+  }
+  .semi-full{
+      width:90%;
+  }
+
+.descriptionTitle{
+    color:gray;
+    margin-bottom:5px;
+}
+mat-horizontal-stepper{
+    div.mat-horizontal-stepper-header-container{
+       mat-step-header {
+           display:none !important;
+        }
+    
+}
+}

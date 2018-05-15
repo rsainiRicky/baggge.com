@@ -1,0 +1,22 @@
+<mat-toolbar class="navbar">
+  <span>Baggge.com</span>
+  <button mat-button [matMenuTriggerFor]="menu"><mat-icon matListIcon>menu</mat-icon></button>
+    
+</mat-toolbar>
+<mat-menu #menu="matMenu">
+  <button mat-menu-item>Shop</button>
+  <button mat-menu-item>Login/Register</button>
+  
+</mat-menu>
+<mat-sidenav-container fullscreen class="layout">
+  <mat-sidenav mode="side" opened="true">
+    <mat-list>
+      <mat-list-item *ngFor="let menu of menuList" [routerLink]="menu.link">
+        <mat-icon matListIcon>{{menu.font}}</mat-icon>
+        <span>{{menu.name}}</span>
+      </mat-list-item>
+    </mat-list>
+  </mat-sidenav>
+  <mat-sidenav-content><router-outlet></router-outlet></mat-sidenav-content>
+</mat-sidenav-container>
+

@@ -1,0 +1,81 @@
+<mat-card>
+ <mat-card-header>
+    <div mat-card-avatar><mat-icon class="titleIcon" matListIcon>smartphone</mat-icon></div>
+    <mat-card-title><h3>Mobile Recharge</h3></mat-card-title>
+    <mat-card-subtitle>Just type in your number and let us handle the rest.</mat-card-subtitle>
+  </mat-card-header>
+ 
+<mat-horizontal-stepper [linear]="true">
+  <mat-step [stepControl]="firstFormGroup">
+    <div class="mobilecontent">
+      <form class="form">
+       <ng-template matStepLabel>Enter Mobile Number</ng-template>
+        <mat-form-field class="half-width">
+          <span matPrefix>+91 &nbsp;</span>
+          <input type="tel" matInput placeholder="Telephone">
+        </mat-form-field>
+        <mat-radio-group class="semi-full">
+          <mat-radio-button value="1">Prepaid</mat-radio-button>
+          <mat-radio-button value="2">Postpaid</mat-radio-button>
+        </mat-radio-group>
+        <mat-form-field *ngIf="serviceProvider">
+          <mat-select placeholder="Operator" >
+            <mat-option>None</mat-option>
+            <mat-option  *ngFor="let provider of serviceProvider.providers" [value]="state">{{provider.provider_name}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-select placeholder="Circle">
+            <mat-option>None</mat-option>
+            <mat-option *ngFor="let state of states" [value]="state">{{state}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <button mat-button matStepperNext>Next</button>
+    </form>
+    </div>
+  </mat-step>
+  <mat-step [stepControl]="secondFormGroup">
+    <form [formGroup]="secondFormGroup">
+      <ng-template matStepLabel>Recharge Amount</ng-template>
+      <mat-form-field>
+        <input matInput placeholder="Amount" formControlName="secondCtrl" required>
+      </mat-form-field>
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step>
+    <ng-template matStepLabel>Pay</ng-template>
+    You are now done.
+    <div>
+      <button mat-button matStepperPrevious>Back</button>
+    </div>
+  </mat-step>
+</mat-horizontal-stepper>
+</mat-card>
+<mat-card>
+<h5>Top Offers</h5>
+<mat-tab-group>
+  <mat-tab label="Vodafone">Top Vodafone offers</mat-tab>
+  <mat-tab label="Airtel">Top Airtel Offers</mat-tab>
+  <mat-tab label="Idea">Top Idea Offers</mat-tab>
+  <mat-tab label="Shop">Offers in Shop</mat-tab>
+</mat-tab-group>
+</mat-card>
+<mat-card>
+<h5 class="descriptionTitle">ONLINE MOBILE RECHARGE ON BAGGGE</h5>
+<p><small>Your mobile recharge either prepaid or postpaid is just a click away with Baggge! Trusted by over 27 million users, Baggge is your one-stop shop solution for online recharge.
+Baggge covers major network providers in India, that include Airtel, Aircel, Vodafone, BSNL, Idea, Tata Docomo (GSM), Uninor, etc. Not only that, to facilitate the online recharges, the latest talk time plans and data packs are updated on the Baggge website accordingly. This makes the data more reliable, and the interface becomes more user-friendly for users.</small></p>
+<br/><h5 class="descriptionTitle">SPECIAL REWARDS</h5>
+<p><small>
+For every prepaid recharge that you complete on Baggge, you may get special rewards that include cashback and exciting coupons.
+</small></p>
+<br/>
+<h5 class="descriptionTitle">SMOOTH PROCESSING, FAST PERFORMANCE, PROTECTED TRANSACTIONS</h5>
+<p><small>
+We at Baggge not only provide you easy accessibility, we also ensure quick transactions. It is possible to complete a prepaid mobile recharge with us in less than 10 seconds. You can do an instant mobile recharge and Win a chance to receive coupons and rewards on a successful transaction.
+</small></p>
+
+</mat-card>
