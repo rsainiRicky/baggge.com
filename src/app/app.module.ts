@@ -21,15 +21,14 @@ import { WaterPageComponent } from './pages/water-page/water-page.component';
 import { MetroPageComponent } from './pages/metro-page/metro-page.component';
 import { OffersPageComponent } from './pages/offers-page/offers-page.component';
 import { PagenotFoundComponent } from './pages/pagenot-found/pagenot-found.component';
-import { BagggeMaterialModule } from './app.material.module';
 import { MobileServiceService } from './services/mobile-service.service';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent,
-    PreloaderComponent,
-    MobilePageComponent,
+    // NavbarComponent,
+    // PreloaderComponent,
+     MobilePageComponent,
     DthPageComponent,
     DatacardPageComponent,
     ElectricityPageComponent,
@@ -42,9 +41,13 @@ import { MobileServiceService } from './services/mobile-service.service';
     PagenotFoundComponent
   ],
   imports: [
-    BrowserModule,FormsModule,ReactiveFormsModule,HttpClientModule,BrowserAnimationsModule,NoopAnimationsModule,BagggeMaterialModule,RouterModule.forRoot(
-      appRoutes
-    )
+    BrowserModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    BrowserAnimationsModule,
+    NoopAnimationsModule,
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [MobileServiceService],
   bootstrap: [AppComponent]

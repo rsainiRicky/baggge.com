@@ -1,41 +1,42 @@
-.layout{
-    width:99.92vw;
-    margin-top:9vh;
-    height: calc(100vh - 9vh);
-    mat-sidenav,mat-sidenav-content{
-        padding:1rem;
-    }
-    mat-sidenav-content{
-        font-size:1rem;
-    }
-    mat-sidenav{
-        background:#f2f2f2;
-        border-right: 1px solid #eee;        
-        mat-list{
-            mat-list-item{
-                font-size:0.8rem;
-                cursor: pointer;
-            }
-        }
-    }
-    
-}
-.navbar{
-    position:fixed;
-    top:0;
-    z-index:9;
-    height:9vh;
+.column {
+    height: 43vh;  /*allows both columns to span the full height of the browser window*/
     display: flex;
-    justify-content: space-between;
-    margin:0px;
-    background:#f2f2f2;
-    border-bottom: 1px solid #f2f2f2;
+    flex-direction: column;  /*places the left and right headers above the bottom content*/
 }
 
-mat-toolbar{
-    button{
-        color:#d32f2f;
-        
-    }
+#left {
+    flex-shrink: 0;
+    flex:1;
+    background:#eeeeee ;
+    height:100%;  /*makes sure that content is not cut off in a smaller browser window*/
+}
+.main{
+    display: flex;
+   // height: 90vh;
+    flex-direction: row;
+}
+ul {
+    display: inline-flex;
+    list-style: none;
+}
+#right{
+    flex:7;
+    background:#fff;
+    height:100%;
+    padding:10px;
+}
+.bottom {
+    flex-grow: 1;  /*ensures that the container will take up the full height of the parent container*/
+    overflow-y: auto;  /*adds scroll to this container*/
+}
 
+a{
+    span{
+        padding: 10px;
+        vertical-align: text-bottom;
+    }
+}
+
+.collection{
+    margin:0px;
 }
