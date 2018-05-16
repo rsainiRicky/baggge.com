@@ -12,7 +12,7 @@
 }
 .main{
     display: flex;
-   // height: 90vh;
+    height: 100vh;
     flex-direction: row;
 }
 ul {
@@ -24,6 +24,8 @@ ul {
     background:#fff;
     height:100%;
     padding:10px;
+    overflow-y:scroll;
+    -webkit-overflow-scrolling: touch;
 }
 .bottom {
     flex-grow: 1;  /*ensures that the container will take up the full height of the parent container*/
@@ -39,4 +41,16 @@ a{
 
 .collection{
     margin:0px;
+}
+::-webkit-scrollbar {
+    width: 0px;  /* remove scrollbar space */
+    background: transparent;  /* optional: just make scrollbar invisible */
+}
+/* optional: show position indicator in red */
+::-webkit-scrollbar-thumb {
+    background: transparent;
+}
+::-moz-scrollbar{
+   width: 0px;  /* remove scrollbar space */
+    background: transparent;
 }
