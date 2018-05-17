@@ -1,15 +1,15 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {NoopAnimationsModule} from '@angular/platform-browser/animations';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {HttpClientModule} from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { PreloaderComponent } from './components/preloader/preloader.component';
-import {appRoutes} from './app.routes';
+import { appRoutes } from './app.routes';
 import { MobilePageComponent } from './pages/mobile-page/mobile.page.component';
 import { DthPageComponent } from './pages/dth-page/dth.page.component';
 import { DatacardPageComponent } from './pages/datacard-page/datacard.page.component';
@@ -28,7 +28,7 @@ import { MobileServiceService } from './services/mobile-service.service';
     AppComponent,
     // NavbarComponent,
     // PreloaderComponent,
-     MobilePageComponent,
+    MobilePageComponent,
     DthPageComponent,
     DatacardPageComponent,
     ElectricityPageComponent,

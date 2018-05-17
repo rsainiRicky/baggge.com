@@ -1,32 +1,25 @@
 <div class="container">
   <h6>Recharge Your Mobile</h6>
   <span>Tell us your number and we will do the rest</span>
-  <div class="col s5">
-    <div class="col s12">
+  <div class="col s12">
+    <div class="col s12 mr-top-15">
       <div class="row mr-bt-0">
         <div class="input-field col s4 mr-bt-0">
           <input id="last_name" type="tel" class="validate">
           <label for="last_name">Telephone</label>
         </div>
-      </div>
-    </div>
-    <div class="row mr-bt-0">
-      <div class="input-field pad-left-0 col s4 mr-bt-0">
-        <p class="col s4">
-          <label>
-            <input name="group1" type="radio" checked />
-            <span>Prepaid</span>
-          </label>
-        </p>
-        <p class="col s4">
-          <label>
-            <input name="group1" type="radio" />
-            <span>Postpaid</span>
-          </label>
-        </p>
-      </div>
-      <div class="col s6 mr-bt-0">
-        <a class="waves-effect waves-light btn">Proceed</a>
+        <div class="row col s4">
+          <div class="input-field col s6" style=" display: flex; ">
+            <p style=" margin-right: 1rem; ">
+              <input class="with-gap amber darken-3" id="male" type="radio" name="gender" value="male" checked />
+              <label for="male">Prepaid</label>
+            </p>
+            <p>
+              <input class="with-gap" id="female" type="radio" name="gender" value="female" checked />
+              <label for="female">Postpaid</label>
+            </p>
+          </div>
+        </div>
       </div>
     </div>
     <div class="input-field col s12 m6">
@@ -44,13 +37,58 @@
         <option value="" data-icon="images/yuna.jpg" class="left">Haryana</option>
       </select>
     </div>
+    <div class="row mr-top-15">
+      <div class="col s6">
+        <a class="waves-effect orange darken-3 waves-light btn">Proceed</a>
+      </div>
+    </div>
   </div>
 
 </div>
 <hr>
 <div class="ad grey-text text-darken-4 container">
-
-  <h5 class="descriptionTitle">ONLINE MOBILE RECHARGE ON BAGGGE</h5>
+  <div class="offers">
+    <span class="descriptionTitle">Offers on Mobile Recharge</span>
+    <span>
+      <a [routerLink]="'/offers'">More Offers</a>
+    </span>
+  </div>
+  <div class="row">
+    <div class="col s12 m4">
+      <div class="card-panel grey lighten-4">
+        <span>
+          <a [routerLink]="'/offers'">
+            <img src="./assets/vodafone.jpg" alt="" width="190px">
+          </a>
+          I am a very simple card. I am good at containing small bits of information.
+        </span>
+      </div>
+    </div>
+    <div class="col s12 m4">
+      <div class="card-panel grey lighten-4">
+        <span>
+          <a [routerLink]="'/offers'">
+            <img src="./assets/airtel.jpg" alt="" width="190px">
+          </a>
+          I am a very simple card. I am good at containing small bits of information.
+        </span>
+      </div>
+    </div>
+    <div class="col s12 m4">
+      <div class="card-panel grey lighten-4">
+        <span>
+          <a [routerLink]="'/offers'">
+            <img src="./assets/jio.png" alt="" width="190px">
+          </a>
+          I am a very simple card. I am good at containing small bits of information.
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+<hr/>
+<div class="ad grey-text text-darken-1 container">
+  <h6 class="descriptionTitle">ONLINE MOBILE RECHARGE ON BAGGGE</h6>
   <p>
     <small>Your mobile recharge either prepaid or postpaid is just a click away with Baggge! Trusted by over 27 million users, Baggge
       is your one-stop shop solution for online recharge. Baggge covers major network providers in India, that include Airtel,
@@ -59,14 +97,14 @@
       and the interface becomes more user-friendly for users.</small>
   </p>
   <br/>
-  <h5 class="descriptionTitle">SPECIAL REWARDS</h5>
+  <h6 class="descriptionTitle">SPECIAL REWARDS</h6>
   <p>
     <small>
       For every prepaid recharge that you complete on Baggge, you may get special rewards that include cashback and exciting coupons.
     </small>
   </p>
   <br/>
-  <h5 class="descriptionTitle">SMOOTH PROCESSING, FAST PERFORMANCE, PROTECTED TRANSACTIONS</h5>
+  <h6 class="descriptionTitle">SMOOTH PROCESSING, FAST PERFORMANCE, PROTECTED TRANSACTIONS</h6>
   <p>
     <small>
       We at Baggge not only provide you easy accessibility, we also ensure quick transactions. It is possible to complete a prepaid

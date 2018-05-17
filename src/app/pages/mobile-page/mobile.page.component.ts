@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { MobileServiceService } from '../../services/mobile-service.service';
 import { HttpClient } from '@angular/common/http';
-import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { moveIn, fallIn } from '../../router.animations';
 
 @Component({
   selector: 'app-mobile.page',
@@ -19,21 +20,20 @@ export class MobilePageComponent implements OnInit {
     'Virginia', 'Washington', 'West Virginia', 'Wisconsin', 'Wyoming'
   ];
   serviceProvider;
-   isLinear = false;
+  isLinear = false;
   firstFormGroup: FormGroup;
   secondFormGroup: FormGroup;
-  constructor(private _formBuilder: FormBuilder ,private mobileService:MobileServiceService,private http: HttpClient) { }
+  constructor(private _formBuilder: FormBuilder, private mobileService: MobileServiceService, private http: HttpClient) { }
 
   ngOnInit() {
-     this.firstFormGroup = this._formBuilder.group({
-      //firstCtrl: ['', Validators.required]
+    this.firstFormGroup = this._formBuilder.group({
     });
     this.secondFormGroup = this._formBuilder.group({
       secondCtrl: ['', Validators.required]
     });
-  this.mobileService.getProvider().subscribe(res => {
-    this.serviceProvider = res.json;
-  })
+    this.mobileService.getProvider().subscribe(res => {
+      this.serviceProvider = res.json;
+    });
   }
 
 }

@@ -13,20 +13,20 @@ import { OffersPageComponent } from './pages/offers-page/offers-page.component';
 import { PagenotFoundComponent } from './pages/pagenot-found/pagenot-found.component';
 
 export const appRoutes: Routes = [
-    { path: 'mobile', component: MobilePageComponent  ,data: { state: 'home' } },
-    { path: 'dth',      component: DthPageComponent, data: { state: 'dth' } },
-    { path: 'datacard',      component: DatacardPageComponent },
-    { path: 'electricity',      component: ElectricityPageComponent },
-    { path: 'landline',      component: LandlinePageComponent },
-    { path: 'broadband',      component: BroadbandPageComponent },
-    { path: 'gas',      component: GasPageComponent },
-    { path: 'water',      component: WaterPageComponent },
-    { path: 'metro',      component: MetroPageComponent },
-    { path: 'offers',      component: OffersPageComponent },
-    
-    { path: '',
-      redirectTo: 'mobile',
-      pathMatch: 'full'
-    },
-    { path: '**', component: PagenotFoundComponent }
-  ];
+  { path: 'mobile', component: MobilePageComponent, data: { state: 'home' } },
+  { path: 'dth', component: DthPageComponent, data: { state: 'dth' } },
+  { path: 'datacard', component: DatacardPageComponent },
+  { path: 'electricity', component: ElectricityPageComponent },
+  { path: 'landline', component: LandlinePageComponent },
+  { path: 'broadband', component: BroadbandPageComponent },
+  { path: 'gas', component: GasPageComponent },
+  { path: 'water', component: WaterPageComponent },
+  { path: 'metro', component: MetroPageComponent },
+  { path: 'offers', component: OffersPageComponent },
+  {
+    path: '',
+    redirectTo: 'mobile',
+    pathMatch: 'full'
+  },
+  { path: '**', component: PagenotFoundComponent }
+];

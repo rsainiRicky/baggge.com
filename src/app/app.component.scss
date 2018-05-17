@@ -41,6 +41,11 @@ a{
 
 .collection{
     margin:0px;
+    font-size: 12px;
+}
+.collection-item:hover{
+     background:#fb8c00;
+      color:white;
 }
 ::-webkit-scrollbar {
     width: 0px;  /* remove scrollbar space */
@@ -53,4 +58,102 @@ a{
 ::-moz-scrollbar{
    width: 0px;  /* remove scrollbar space */
     background: transparent;
+}
+.page-footer .footer-copyright{
+  min-height: 20px;
+  font-size: 12px;
+  padding:5px 0;
+}
+
+.links{
+  display:flex;
+  flex-direction: column;
+  font-size: 10px;
+}
+footer{
+  background-color: #fff!important;
+  border-top: 1px solid #f2f2f2;
+}
+
+.font-size-12{
+  font-size:12px;
+}
+
+
+.footersign{
+  text-align: left;
+  padding: 25px 0;
+  font-size: 12px;
+  margin:0 auto;
+  color:black;
+  span{
+    font-size: 10px;
+    text-transform: uppercase;
+    padding: 6px 18px 6px 0;
+    border-right: 1px solid #a4a9ac;
+    margin-right:15px;
+  }
+  a{
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 15px;
+    img{
+     width: 50px;
+    margin-right: 28px;
+    }
+  }
+  img{
+      vertical-align: middle;
+    margin-right: 15px;
+   width: 50px;
+    margin-right: 28px;
+  }
+  .secured{
+    margin-left: 18px;
+  }
+}
+
+.open{
+  z-index: 1003;
+  display: block;
+  opacity: 1;
+  top: 5%;
+  transform: scaleX(1) scaleY(1);
+}
+.modal-content{
+  padding:0px;
+  .container{
+	width: 100%;
+}
+
+.tabs .indicator
+{
+	background-color: #e0f2f1;
+	height: 60px;
+	opacity: 0.3;
+}
+
+.form-container
+{
+	padding: 40px;
+	padding-top: 10px;
+}
+
+.confirmation-tabs-btn
+{
+	position: absolute;
+}
+}
+
+.progress{
+  position: fixed;
+    height: 2px;
+    top: 0px;
+    display: block;
+    width: 100%;
+    background-color: #ff9100;
+    border-radius: 2px;
+    margin: 0.1rem 0 0rem 0;
+    overflow: hidden;
+    z-index: 999;
 }

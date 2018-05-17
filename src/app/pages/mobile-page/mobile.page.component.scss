@@ -38,4 +38,21 @@ hr{
 .ad{
   margin: 5px -15px;
   padding-left:60px;
+  .offers{
+    display:flex;
+    justify-content: space-between;
+  }
+}
+.input-field{
+  margin-top:0px;
+}
+.mr-top-15{
+  margin-top:15px;
+}
+.with-gap[type="radio"]:checked+label:after{
+   background-color: #ef6c00 ;
+   border-color: #ef6c00 ;
+}
+.with-gap[type="radio"]:checked+label:before{
+  border-color: #ef6c00 ;
 }
