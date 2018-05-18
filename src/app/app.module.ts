@@ -5,6 +5,7 @@ import { RouterModule } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MaterializeModule } from 'angular2-materialize';
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
@@ -42,6 +43,7 @@ import { MobileServiceService } from './services/mobile-service.service';
   ],
   imports: [
     BrowserModule,
+    MaterializeModule,
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,

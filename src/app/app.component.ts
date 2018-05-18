@@ -1,5 +1,6 @@
-import { Component, OnInit, HostBinding } from '@angular/core';
+import { Component, OnInit, HostBinding, EventEmitter } from '@angular/core';
 import { moveIn, fallIn } from './router.animations';
+import { MaterializeAction } from 'angular2-materialize';
 
 @Component({
   selector: 'app-root',
@@ -7,7 +8,10 @@ import { moveIn, fallIn } from './router.animations';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
+
+  modalActions = new EventEmitter<string | MaterializeAction>();
   isModalOpen = false;
+  isSignup = false;
   title = 'app';
   menuList = [{ 'name': 'Mobile', 'font': 'smartphone', 'link': 'mobile' },
   { 'name': 'DTH', 'font': 'tv', 'link': 'dth' },
@@ -36,7 +40,15 @@ export class AppComponent implements OnInit {
   }
 
   loginModal() {
-    this.isModalOpen = true;
+    this.modalActions.emit({ action: 'modal', params: ['open'] });
   }
+
+  togglePage() {
+    console.log(this.isSignup);
+
+    // tslint:disable-next-line:no-unused-expression
+    this.isSignup ? false : true;
+  }
+
 }
 
