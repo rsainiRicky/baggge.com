@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, ViewChild } from '@angular/core';
 import { MobileServiceService } from '../../services/mobile-service.service';
 import { HttpClient } from '@angular/common/http';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
@@ -23,7 +23,10 @@ export class MobilePageComponent implements OnInit {
   isLinear = false;
   firstFormGroup: FormGroup;
   secondFormGroup: FormGroup;
-  constructor(private _formBuilder: FormBuilder, private mobileService: MobileServiceService, private http: HttpClient) { }
+  constructor(private _formBuilder: FormBuilder, private mobileService: MobileServiceService, private http: HttpClient) {
+
+
+  }
 
   ngOnInit() {
     this.firstFormGroup = this._formBuilder.group({
@@ -32,8 +35,10 @@ export class MobilePageComponent implements OnInit {
       secondCtrl: ['', Validators.required]
     });
     this.mobileService.getProvider().subscribe(res => {
-      this.serviceProvider = res.json;
+      this.serviceProvider = res;
+      console.log(res);
     });
+
   }
 
 }

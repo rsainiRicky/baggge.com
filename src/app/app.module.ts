@@ -23,12 +23,17 @@ import { MetroPageComponent } from './pages/metro-page/metro-page.component';
 import { OffersPageComponent } from './pages/offers-page/offers-page.component';
 import { PagenotFoundComponent } from './pages/pagenot-found/pagenot-found.component';
 import { MobileServiceService } from './services/mobile-service.service';
+import { FooterComponent } from './components/footer/footer.component';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { InfoComponent } from './components/info/info.component';
+import { OfferComponent } from './components/offer/offer.component';
+import { OfferCardComponent } from './components/offer-card/offer-card.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    // NavbarComponent,
-    // PreloaderComponent,
+    NavbarComponent,
+    PreloaderComponent,
     MobilePageComponent,
     DthPageComponent,
     DatacardPageComponent,
@@ -39,7 +44,12 @@ import { MobileServiceService } from './services/mobile-service.service';
     WaterPageComponent,
     MetroPageComponent,
     OffersPageComponent,
-    PagenotFoundComponent
+    PagenotFoundComponent,
+    FooterComponent,
+    SidebarComponent,
+    InfoComponent,
+    OfferComponent,
+    OfferCardComponent
   ],
   imports: [
     BrowserModule,

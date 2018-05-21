@@ -1,0 +1,11 @@
+<div class="ad grey-text text-darken-4 container">
+  <div class="offers">
+    <span class="descriptionTitle">Offers on Mobile Recharge</span>
+    <span>
+      <a href="/offers">More Offers</a>
+    </span>
+  </div>
+  <div class="row">
+    <app-offer-card *ngFor="let offer of offers" [offerCard]="offer"></app-offer-card>
+  </div>
+</div>

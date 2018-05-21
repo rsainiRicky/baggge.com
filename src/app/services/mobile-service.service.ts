@@ -7,8 +7,8 @@ export class MobileServiceService {
 
   constructor(private http: HttpClient) { }
 
-  getProvider():Observable<any>{
-    return this.http.get('./assets/provider.json');
+  getProvider() {
+    return this.http.get('http://localhost:8000/api/cats');
   }
 
 }

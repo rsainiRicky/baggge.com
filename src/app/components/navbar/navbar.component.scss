@@ -1,0 +1,55 @@
+
+.modal-content{
+
+.header{
+ margin-bottom:0px;
+ span{
+   text-align: right;
+   cursor: pointer;
+ }
+}
+.loginpanel{
+  display: block;
+  margin:0 auto;
+  width:56%;
+  vertical-align: middle;
+  margin-left:auto;
+}
+li.tab.col.s3{
+  margin-left:0px;
+  text-align: left;
+}
+.tabs{
+  background: transparent;
+}
+.forgotpanel{
+  display:flex;
+  font-size: 12px;
+  margin-bottom: 12px;
+}
+.loginwith{
+    padding: 10px 20px;
+    background: transparent url(/desktop/images/gplus-icon.png) no-repeat 16px;
+    background-size: 22px auto;
+    margin-top: 1rem;
+    margin-bottom: 4rem;
+    cursor: pointer;
+}
+.facebook{
+  border:1px solid #607ecb;
+  color: #607ecb;
+}
+.google{
+   border: 1px solid #e24545;
+   color: #e24545;
+   margin-left:10px;
+}
+.or{
+  margin-top: 15px;
+  margin-bottom: 15px;
+  font-size: 13px;
+}
+form{
+  margin-top:2rem;
+}
+}

@@ -9,7 +9,7 @@
           <label for="last_name">Telephone</label>
         </div>
         <div class="row col s4">
-          <div class="input-field col s6" style=" display: flex; ">
+          <div class="col s6" style=" display: flex; ">
             <p style=" margin-right: 1rem; ">
               <input class="with-gap amber darken-3" id="male" type="radio" name="gender" value="male" checked />
               <label for="male">Prepaid</label>
@@ -22,7 +22,7 @@
         </div>
       </div>
     </div>
-    <div class="input-field col s12 m6">
+    <div class="col s12 m3">
       <select class="icons col s6 displayinline">
         <option value="" disabled selected>Operator</option>
         <option value="" data-icon="images/sample-1.jpg">Airtel</option>
@@ -43,73 +43,8 @@
       </div>
     </div>
   </div>
-
 </div>
 <hr>
-<div class="ad grey-text text-darken-4 container">
-  <div class="offers">
-    <span class="descriptionTitle">Offers on Mobile Recharge</span>
-    <span>
-      <a [routerLink]="'/offers'">More Offers</a>
-    </span>
-  </div>
-  <div class="row">
-    <div class="col s12 m4">
-      <div class="card-panel grey lighten-4">
-        <span>
-          <a [routerLink]="'/offers'">
-            <img src="./assets/vodafone.jpg" alt="" width="190px">
-          </a>
-          I am a very simple card. I am good at containing small bits of information.
-        </span>
-      </div>
-    </div>
-    <div class="col s12 m4">
-      <div class="card-panel grey lighten-4">
-        <span>
-          <a [routerLink]="'/offers'">
-            <img src="./assets/airtel.jpg" alt="" width="190px">
-          </a>
-          I am a very simple card. I am good at containing small bits of information.
-        </span>
-      </div>
-    </div>
-    <div class="col s12 m4">
-      <div class="card-panel grey lighten-4">
-        <span>
-          <a [routerLink]="'/offers'">
-            <img src="./assets/jio.png" alt="" width="190px">
-          </a>
-          I am a very simple card. I am good at containing small bits of information.
-        </span>
-      </div>
-    </div>
-  </div>
-</div>
-<hr/>
-<div class="ad grey-text text-darken-1 container">
-  <h6 class="descriptionTitle">ONLINE MOBILE RECHARGE ON BAGGGE</h6>
-  <p>
-    <small>Your mobile recharge either prepaid or postpaid is just a click away with Baggge! Trusted by over 27 million users, Baggge
-      is your one-stop shop solution for online recharge. Baggge covers major network providers in India, that include Airtel,
-      Aircel, Vodafone, BSNL, Idea, Tata Docomo (GSM), Uninor, etc. Not only that, to facilitate the online recharges, the
-      latest talk time plans and data packs are updated on the Baggge website accordingly. This makes the data more reliable,
-      and the interface becomes more user-friendly for users.</small>
-  </p>
-  <br/>
-  <h6 class="descriptionTitle">SPECIAL REWARDS</h6>
-  <p>
-    <small>
-      For every prepaid recharge that you complete on Baggge, you may get special rewards that include cashback and exciting coupons.
-    </small>
-  </p>
-  <br/>
-  <h6 class="descriptionTitle">SMOOTH PROCESSING, FAST PERFORMANCE, PROTECTED TRANSACTIONS</h6>
-  <p>
-    <small>
-      We at Baggge not only provide you easy accessibility, we also ensure quick transactions. It is possible to complete a prepaid
-      mobile recharge with us in less than 10 seconds. You can do an instant mobile recharge and Win a chance to receive
-      coupons and rewards on a successful transaction.
-    </small>
-  </p>
-</div>
+<app-offer></app-offer>
+<hr>
+<app-info></app-info>

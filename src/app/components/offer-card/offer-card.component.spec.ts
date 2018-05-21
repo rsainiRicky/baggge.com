@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { Mobile.PageComponent } from './mobile.page.component';
+import { OfferCardComponent } from './offer-card.component';
 
-describe('Mobile.PageComponent', () => {
-  let component: Mobile.PageComponent;
-  let fixture: ComponentFixture<Mobile.PageComponent>;
+describe('OfferCardComponent', () => {
+  let component: OfferCardComponent;
+  let fixture: ComponentFixture<OfferCardComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ Mobile.PageComponent ]
+      declarations: [ OfferCardComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(Mobile.PageComponent);
+    fixture = TestBed.createComponent(OfferCardComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

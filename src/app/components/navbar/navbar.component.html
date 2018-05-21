@@ -1,3 +1,100 @@
-<p>
-  navbar works!
-</p>
+<div class="navbar-fixed">
+  <nav class="grey lighten-5">
+
+    <div class="nav-wrapper">
+      <a href="#!" class="brand-logo grey-text text-darken-3">
+        <!-- <span>Baggge.com</span> -->
+      </a>
+      <ul class="right hide-on-med-and-down grey-text text-darken-3">
+        <li>
+          <a (click)="loginModal()" class="grey-text text-darken-3">Login/Register</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</div>
+<div #modal id="modal1" class="modal" materialize="modal" [materializeParams]="[{dismissible: false}]" [materializeActions]="modalActions">
+  <div class="modal-content">
+    <div class="header row">
+      <h4 class="center-align col s11 orange-text text-darken-3">BAGGGE</h4>
+      <span class="col s1" (click)="closeModal()">
+        <i class="material-icons">close</i>
+      </span>
+    </div>
+    <div class="row maincontent">
+      <div class="col s12">
+        <ul class="tabs">
+          <li class="tab col s3">
+            <a class="active" href="#test1">Login</a>
+          </li>
+          <li class="tab col s3">
+            <a href="#test2">Register</a>
+          </li>
+        </ul>
+      </div>
+      <div id="test1" class="col s12">
+        <div class="loginpanel">
+          <div class="_1L2e4">
+            <form method="post" autocomplete="off">
+              <div class="_3K7IU">
+                <div class="input-container _1PxYj false">
+                  <input type="text" placeholder="Email Id/Mobile Number" name="username" value="">
+                </div>
+                <div class="input-container _1PxYj false">
+                  <input type="password" placeholder="Password" name="password" value="">
+                </div>
+                <div class="forgotpanel">
+                  <div class="_2hayM">Forgot Password?</div>
+                </div>
+                <button class="orange darken-3 btn">Login</button>
+                <div class="_1sPSD"></div>
+              </div>
+            </form>
+          </div>
+          <div class="mp409 ">
+            <div class="or">OR</div>
+            <div>
+              <span class="loginwith facebook"> Login with Facebook </span>
+              <span class="loginwith google">Login with Google</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="test2" class="col s12">
+        <div class="row">
+          <form class="col s12">
+            <div class="row">
+              <div class="input-field col s6">
+                <input placeholder="Username" id="first_name" type="text" class="validate">
+                <label for="first_name">User Name</label>
+              </div>
+              <div class="input-field col s6">
+                <input id="last_name" type="tel" class="validate">
+                <label for="last_name">Phone Number</label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s6">
+                <input id="first_name" type="password" class="validate">
+                <label for="first_name">Password</label>
+              </div>
+              <div class="input-field col s6">
+                <input id="last_name" type="password" class="validate">
+                <label for="last_name">Confirm Password</label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s6">
+                <input id="email" type="email" class="validate">
+                <label for="email">Email</label>
+              </div>
+              <div class="input-field col s6">
+                <a class="waves-effect  waves-light orange darken-2 btn">Sign Up</a>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

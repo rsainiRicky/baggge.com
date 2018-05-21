@@ -9,20 +9,11 @@ import { MaterializeAction } from 'angular2-materialize';
 })
 export class AppComponent implements OnInit {
 
-  modalActions = new EventEmitter<string | MaterializeAction>();
+
   isModalOpen = false;
   isSignup = false;
   title = 'app';
-  menuList = [{ 'name': 'Mobile', 'font': 'smartphone', 'link': 'mobile' },
-  { 'name': 'DTH', 'font': 'tv', 'link': 'dth' },
-  { 'name': 'Data Card', 'font': 'usb', 'link': 'datacard' },
-  { 'name': 'Electricity', 'font': 'wb_incandescent', 'link': 'electricity' },
-  { 'name': 'Landline', 'font': 'local_phone', 'link': 'landline' },
-  { 'name': 'Broadband', 'font': 'router', 'link': 'broadband' },
-  { 'name': 'Gas', 'font': 'whatshot', 'link': 'gas' },
-  { 'name': 'Water', 'font': 'invert_colors', 'link': 'water' },
-  { 'name': 'Metro', 'font': 'directions_subway', 'link': 'metro' },
-  { 'name': 'Offers', 'font': 'local_offer', 'link': 'offers' }];
+
   tiles = [
     { text: 'One', cols: 4, rows: 3, color: 'lightblue' },
     { text: 'Two', cols: 4, rows: 1, color: 'lightgreen' },
@@ -37,10 +28,6 @@ export class AppComponent implements OnInit {
   }
   ngOnInit() {
     // this.isLoading = false;
-  }
-
-  loginModal() {
-    this.modalActions.emit({ action: 'modal', params: ['open'] });
   }
 
   togglePage() {
