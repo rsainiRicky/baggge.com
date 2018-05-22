@@ -1,11 +1,11 @@
-<div class="ad grey-text text-darken-4 container">
+<div class="ad grey-text text-darken-4 container fadeIn animated">
   <div class="offers">
-    <span class="descriptionTitle">Offers on Mobile Recharge</span>
+    <span class="descriptionTitle">{{offerDescription}}</span>
     <span>
       <a href="/offers">More Offers</a>
     </span>
   </div>
   <div class="row">
-    <app-offer-card *ngFor="let offer of offers" [offerCard]="offer"></app-offer-card>
+    <app-offer-card *ngFor="let offer of offers | slice:0:limit" [offerCard]="offer"></app-offer-card>
   </div>
 </div>

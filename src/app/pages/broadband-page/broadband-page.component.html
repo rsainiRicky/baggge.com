@@ -1,3 +1,39 @@
-<p>
-  broadband-page works!
-</p>
+<div class="container">
+  <h6>PAY YOUR BROADBAND BILL</h6>
+  <span>Give us a few details and will do the rest</span>
+  <div class="col s12 m3 mr-top-15">
+    <select class="icons col s6 displayinline">
+      <option selected="" disabled="" value="">Broadband Provider</option>
+      <option value="702">ACT Fibernet</option>
+      <option value="700">Airtel</option>
+      <option value="701">BSNL</option>
+      <option value="707">Connect Broadband</option>
+      <option value="705">MTNL Delhi</option>
+      <option value="706">MTNL Mumbai</option>
+    </select>
+  </div>
+  <div class="col s12">
+    <div class="col s12 mr-top-15 ">
+      <div class="row mr-bt-0">
+        <div class="input-field col s4 mr-bt-0">
+          <input id="last_name" type="tel" class="validate">
+          <label for="last_name">Account Number</label>
+        </div>
+        <div class="input-field col s4 mr-bt-0">
+          <input id="last_name" type="tel" class="validate">
+          <label for="last_name">Telephone No.</label>
+        </div>
+      </div>
+    </div>
+
+    <div class="row mr-top-15">
+      <div class="col s6">
+        <a class="waves-effect orange darken-3 waves-light btn">Proceed</a>
+      </div>
+    </div>
+  </div>
+</div>
+<hr>
+<app-offer [offerDescription]="'Offers on Broadband Bill Payment'" [limit]="3"></app-offer>
+<hr>
+<app-info></app-info>

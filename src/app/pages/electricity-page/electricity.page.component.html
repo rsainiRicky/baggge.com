@@ -1,3 +1,61 @@
-<p>
-  electricity.page works!
-</p>
+<div class="container">
+  <h6>PAY YOUR ELECTRICITY BILL</h6>
+  <span>Give us a few details and will do the rest</span>
+  <div class="col s12 m3 mr-top-15">
+    <select class="icons col s6 displayinline">
+      <option selected="" disabled="" value="">Electricity Provider</option>
+      <option value="239">APEPDCL - Eastern Power Distribution Company of Andhra Pradesh Limited</option>
+      <option value="232">Ajmer Vidhyut Vitran Nigam Ltd</option>
+      <option value="221">BESCOM Bangalore</option>
+      <option value="202">BEST Mumbai</option>
+      <option value="203">BSES Rajdhani Delhi NCR</option>
+      <option value="204">BSES Yamuna Delhi NCR</option>
+      <option value="246">Bharatpur Electricity Services Ltd.</option>
+      <option value="245">Bikaner Electricity Supply Limited.</option>
+      <option value="205">CESC Ltd</option>
+      <option value="206">CSEB - Chhattisgarh State Electricity Board</option>
+      <option value="236">Daman and Diu Electricity Department</option>
+      <option value="226">Daskshin Gujrat Vij Company Limited</option>
+      <option value="224">India Power Corporation (BodhGaya) Limited</option>
+      <option value="208">JUSCO - Jamshedpur Utilities &amp; Services</option>
+      <option value="215">JVVNL - Jaipur Vidyut Vitran Nigam Ltd</option>
+      <option value="248">Jodhpur Vidyut Vitran Nigam Ltd</option>
+      <option value="243">Kanpur Electricity Supply Company Ltd</option>
+      <option value="244">Kota Electricity Distribution Ltd.</option>
+      <option value="229">MP Madhya Kshetra Vidyut Vitaran - Bhopal</option>
+      <option value="210">MSEDC - Maharastra Power Distribution Ltd</option>
+      <option value="227">Madhya Gujrat Vij Company Limited</option>
+      <option value="250">Madhya Pradesh Paschim Kshetra Vidyut Vitaran Co. Ltd - Indore</option>
+      <option value="233">Meghalaya State Electricity Corporation Limited</option>
+      <option value="212">NPCL - Noida Power Co Ltd</option>
+      <option value="228">Paschim Gujrat Vij Company Limited</option>
+      <option value="214">Reliance Energy Mumbai</option>
+      <option value="238">SNDL Nagpur</option>
+      <option value="218">TSECL - Tripura State Electricity Corp</option>
+      <option value="242">Tata Power - Mumbai</option>
+      <option value="211">Tata Power Delhi Distribution Limited</option>
+      <option value="217">Torrent Power</option>
+      <option value="225">Uttar Gujrat Vij Company Limited</option>
+    </select>
+  </div>
+  <div class="col s12">
+    <div class="col s12 mr-top-15 ">
+      <div class="row mr-bt-0">
+        <div class="input-field col s4 mr-bt-0">
+          <input id="last_name" type="tel" class="validate">
+          <label for="last_name">Account ID</label>
+        </div>
+      </div>
+    </div>
+
+    <div class="row mr-top-15">
+      <div class="col s6">
+        <a class="waves-effect orange darken-3 waves-light btn">Proceed</a>
+      </div>
+    </div>
+  </div>
+</div>
+<hr>
+<app-offer [offerDescription]="'Offers on Electricity Bill Payment'" [limit]="3"></app-offer>
+<hr>
+<app-info></app-info>

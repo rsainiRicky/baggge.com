@@ -1,3 +1,36 @@
-<p>
-  landline-page works!
-</p>
+<div class="container">
+  <h6>PAY YOUR LANDLINE BILL</h6>
+  <span>Give us a few details and will do the rest</span>
+  <div class="col s12 m3 mr-top-15">
+    <select class="icons col s6 displayinline">
+      <option selected="" disabled="" value="">Landline Provider</option>
+      <option value="105">ACT Broadband</option>
+      <option value="102">Airtel Landline</option>
+      <option value="103">BSNL Landline</option>
+      <option value="100">MTNL Delhi</option>
+      <option value="107">MTNL Mumbai</option>
+      <option value="104">Reliance Communications</option>
+      <option value="106">Tata Docomo Landline</option>
+    </select>
+  </div>
+  <div class="col s12">
+    <div class="col s12 mr-top-15 ">
+      <div class="row mr-bt-0">
+        <div class="input-field col s4 mr-bt-0">
+          <input id="last_name" type="tel" class="validate">
+          <label for="last_name">Account Number/Telephone No.</label>
+        </div>
+      </div>
+    </div>
+
+    <div class="row mr-top-15">
+      <div class="col s6">
+        <a class="waves-effect orange darken-3 waves-light btn">Proceed</a>
+      </div>
+    </div>
+  </div>
+</div>
+<hr>
+<app-offer [offerDescription]="'Offers on Landline Bill Payment'" [limit]="3"></app-offer>
+<hr>
+<app-info></app-info>

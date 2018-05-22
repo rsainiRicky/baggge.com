@@ -1,0 +1,52 @@
+
+.typepayment{
+    padding-top:2rem;
+}
+
+.container{
+    margin: 1rem 4rem;
+    h6{
+        margin-bottom:0.1rem;
+    }
+    span{
+        font-size: small;
+    }
+}
+
+
+.mr-bt-0{
+    margin-bottom:0px;
+}
+.pad-left-0{
+    padding-left:0px;
+}
+
+.displayinline{
+  display:inline;
+}
+
+select{
+  width:16rem;
+  height: 2.2rem;
+  font-size: 12px;
+}
+
+hr{
+  margin: 0 0 0 -15px;
+  border: 1px solid #f2f2f2;
+}
+
+
+.input-field{
+  margin-top:0px;
+}
+.mr-top-15{
+  margin-top:15px;
+}
+.with-gap[type="radio"]:checked+label:after{
+   background-color: #ef6c00 ;
+   border-color: #ef6c00 ;
+}
+.with-gap[type="radio"]:checked+label:before{
+  border-color: #ef6c00 ;
+}
