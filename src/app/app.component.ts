@@ -1,7 +1,10 @@
 import { Component, OnInit, HostBinding, EventEmitter } from '@angular/core';
 import { moveIn, fallIn } from './router.animations';
 import { MaterializeAction } from 'angular2-materialize';
-
+import { Observable } from 'rxjs/Observable';
+import { Store } from '@ngrx/store';
+import * as fromStore from './core/reducers';
+import * as providerAction from './core/actions/providers.actions';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -9,7 +12,8 @@ import { MaterializeAction } from 'angular2-materialize';
 })
 export class AppComponent implements OnInit {
 
-
+  providers: Observable<any>;
+  isLoading: Observable<any>;
   isModalOpen = false;
   isSignup = false;
   title = 'app';
@@ -19,15 +23,16 @@ export class AppComponent implements OnInit {
     { text: 'Two', cols: 4, rows: 1, color: 'lightgreen' },
     { text: 'Three', cols: 4, rows: 1, color: 'lightpink' },
   ];
-  isLoading = true;
-  constructor() {
-    this.isLoading = true;
+
+  constructor(private store: Store<fromStore.State>) {
+    this.isLoading = store.select(fromStore.getAppProvider);
+    this.providers = store.select(fromStore.getProvider);
   }
   getState(outlet) {
     return outlet.activatedRouteData.state;
   }
   ngOnInit() {
-    // this.isLoading = false;
+    this.store.dispatch(new providerAction.GetProviders());
   }
 
   togglePage() {

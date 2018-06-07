@@ -22,12 +22,16 @@ import { WaterPageComponent } from './pages/water-page/water-page.component';
 import { MetroPageComponent } from './pages/metro-page/metro-page.component';
 import { OffersPageComponent } from './pages/offers-page/offers-page.component';
 import { PagenotFoundComponent } from './pages/pagenot-found/pagenot-found.component';
-import { MobileServiceService } from './services/mobile-service.service';
+import { MobileService } from './services/mobile-service.service';
 import { FooterComponent } from './components/footer/footer.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { InfoComponent } from './components/info/info.component';
 import { OfferComponent } from './components/offer/offer.component';
 import { OfferCardComponent } from './components/offer-card/offer-card.component';
+import { GetProvidersEffects } from './core/effects/providers.effects';
+import { reducer } from './core/reducers/providers.reducers';
+import { StoreModule } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
 
 @NgModule({
   declarations: [
@@ -59,9 +63,13 @@ import { OfferCardComponent } from './components/offer-card/offer-card.component
     HttpClientModule,
     BrowserAnimationsModule,
     NoopAnimationsModule,
+    StoreModule.forRoot(reducer, {}),
+    EffectsModule.forRoot([
+      GetProvidersEffects
+    ]),
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [MobileServiceService],
+  providers: [MobileService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

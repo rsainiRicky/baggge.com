@@ -15,16 +15,13 @@
   </nav>
 </div>
 <div #modal id="modal1" class="modal" materialize="modal" [materializeParams]="[{dismissible: false}]" [materializeActions]="modalActions">
-  <div class="modal-content">
-    <div class="header row">
+  <div class="wrapper fadeInDown modal-content">
+    <!-- <div class="header row">
       <h4 class="center-align col s11 orange-text text-darken-3">
         <img src="../../../assets/baggge-logo.png" width="100rem" />
       </h4>
-      <span class="col s1" (click)="closeModal()">
-        <i class="material-icons">close</i>
-      </span>
-    </div>
-    <div class="row maincontent">
+    </div> -->
+    <!-- <div class="row maincontent">
       <div class="col s12">
         <ul class="tabs">
           <li class="tab col s3">
@@ -98,6 +95,31 @@
           </form>
         </div>
       </div>
+    </div> -->
+    <div id="formContent">
+      <!-- Tabs Titles -->
+
+      <!-- Icon -->
+      <div class="fadeIn first">
+        <img src="../../../assets/baggge-logo.png" id="icon" alt="User Icon" />
+        <span class="close" (click)="closeModal()">
+          <i class="material-icons">close</i>
+        </span>
+      </div>
+
+      <!-- Login Form -->
+      <form>
+        <input type="text" id="login" class="fadeIn second" name="login" placeholder="login">
+        <input type="text" id="password" class="fadeIn third" name="login" placeholder="password">
+        <input type="submit" class="fadeIn fourth" value="Log In">
+      </form>
+
+      <!-- Remind Passowrd -->
+      <div id="formFooter">
+        <a class="underlineHover" href="#">Forgot Password?</a>
+        <a class="underlineHover" href="#">Don't have an account?</a>
+      </div>
+
     </div>
   </div>
 </div>

@@ -10,7 +10,6 @@ export class OfferCardComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    console.log(this.offerCard);
   }
 
 }
