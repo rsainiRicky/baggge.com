@@ -1,4 +1,4 @@
-import * as Action from '../actions/providers.actions';
+import * as ProviderAction from '../actions/providers.actions';
 import { PROVIDER } from '../interfaces/providers.interface';
 
 export interface State {
@@ -13,30 +13,38 @@ export const initialState: State = {
   providers: []
 };
 
-export function reducer(state = initialState, action: Action.Actions): State {
+export function reducer(state = initialState, action: ProviderAction.Action) {
   switch (action.type) {
-    case Action.GET_PROVIDERS: {
-      return {
-        ...state,
-        isLoading: true,
-        isLoadSuccess: false,
-        providers: []
-      };
-    }
-    case Action.GET_PROVIDERS_SUCCESS: {
+    // case ProviderAction.GET_PROVIDERS: {
+    //   return {
+    //     ...state,
+    //     isLoading: true,
+    //     isLoadSuccess: false,
+    //     providers: []
+    //   };
+    // }
+    // case ProviderAction.GET_PROVIDERS_SUCCESS: {
+    //   return {
+    //     ...state,
+    //     isLoading: false,
+    //     isLoadSuccess: true,
+    //     providers: action.payload
+    //   };
+    // }
+    // case ProviderAction.GET_PROVIDERS_FAILED: {
+    //   return {
+    //     ...state,
+    //     isLoading: false,
+    //     isLoadSuccess: false,
+    //     providers: []
+    //   };
+    // }
+    case ProviderAction.GET_PROVIDERS_SUCCESS: {
       return {
         ...state,
         isLoading: false,
         isLoadSuccess: true,
         providers: action.payload
-      };
-    }
-    case Action.GET_PROVIDERS_FAILED: {
-      return {
-        ...state,
-        isLoading: false,
-        isLoadSuccess: false,
-        providers: []
       };
     }
     default: {

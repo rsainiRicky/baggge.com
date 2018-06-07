@@ -3,7 +3,10 @@ import { MobileService } from '../../services/mobile-service.service';
 import { HttpClient } from '@angular/common/http';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { moveIn, fallIn } from '../../router.animations';
-
+import { AppState } from '../../core/interfaces/providers.interface';
+import * as providerAction from '../../core/actions/providers.actions';
+import { Store } from '@ngrx/store';
+import { Observable } from 'rxjs/Observable';
 @Component({
   selector: 'app-mobile.page',
   templateUrl: './mobile.page.component.html',
@@ -23,22 +26,17 @@ export class MobilePageComponent implements OnInit {
   isLinear = false;
   firstFormGroup: FormGroup;
   secondFormGroup: FormGroup;
-  constructor(private _formBuilder: FormBuilder, private mobileService: MobileService, private http: HttpClient) {
+  providers;
+  constructor(private _formBuilder: FormBuilder, private store: Store<AppState>) {
 
-
+    store.select('providers').subscribe(data => this.providers = data);
   }
-
+  getProviders() {
+    this.store.dispatch(new providerAction.GetProvidersAction());
+  }
   ngOnInit() {
-    this.firstFormGroup = this._formBuilder.group({
-    });
-    this.secondFormGroup = this._formBuilder.group({
-      secondCtrl: ['', Validators.required]
-    });
-    this.mobileService.getProvider().subscribe(res => {
-      this.serviceProvider = res;
-      console.log(res);
-    });
-
+    this.getProviders();
+    console.log(this.providers);
   }
 
 }

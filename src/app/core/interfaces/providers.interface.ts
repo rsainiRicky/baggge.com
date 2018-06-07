@@ -7,3 +7,7 @@ export interface PROVIDER {
   provider_image: string;
   status: string;
 }
+
+export interface AppState {
+  providers: PROVIDER[];
+}

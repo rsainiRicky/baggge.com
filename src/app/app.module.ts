@@ -32,7 +32,6 @@ import { GetProvidersEffects } from './core/effects/providers.effects';
 import { reducer } from './core/reducers/providers.reducers';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
-
 @NgModule({
   declarations: [
     AppComponent,
