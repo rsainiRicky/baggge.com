@@ -1,0 +1,36 @@
+.menu-itemm{
+    a{
+        color: #fff;
+        display: block;
+        padding: 10px 10px 10px 0px;
+        border-bottom: 1px dashed #00214B;
+        line-height: 30px;
+        transition: all 0.5s ease;
+        -webkit-transition: all 0.5s ease;
+        i{
+            background: #bfda0a;
+            color: #094b75;
+            -webkit-border-top-right-radius: 30px;
+            -webkit-border-bottom-right-radius: 30px;
+            -moz-border-radius-topright: 30px;
+            -moz-border-radius-bottomright: 30px;
+            border-top-right-radius: 30px;
+            border-bottom-right-radius: 30px;
+            height: 30px;
+            -webkit-transition: all 0.5s ease;
+            font-size: 20px;
+            float: left;
+            margin-right: 10px;
+            line-height: 30px;
+            padding: 0px 10px 0px 5px;
+        }
+        &:hover{
+            -webkit-transition: all 0.5s ease;
+            i{
+                padding: 0px 10px 0px 20px;
+                background: #fff;
+                -webkit-transition: all 0.5s ease;
+            }
+        }
+    }
+}
