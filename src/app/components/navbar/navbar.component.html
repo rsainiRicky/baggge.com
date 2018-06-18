@@ -2,10 +2,10 @@
   <nav class="grey lighten-5">
 
     <div class="nav-wrapper">
-      <a href="#!" class="brand-logo">
+      <a [routerLink]="'mobile'" class="brand-logo">
         <img src="../../../assets/logo.png" />
       </a>
-      <ul class="right hide-on-med-and-down grey-text text-darken-3">
+      <ul class="right hide-on-med-and-down">
         <li>
           <a class="grey-text text-darken-2" data-activates="notificationDrop" materialize="dropdown">
             <i class="large material-icons">notifications</i>
@@ -32,7 +32,7 @@
                 <h5>Welcome Ricky!</h5>
               </li>
               <a class="collection-item grey-text text-darken-3">
-                <span>Account</span>
+                <span [routerLink]="'account'">Account</span>
               </a>
               <a class="collection-item grey-text text-darken-3">
                 <span>My Coupons</span>
@@ -59,6 +59,17 @@
           <a (click)="loginModal()" class="grey-text text-darken-3">Login/Register</a>
         </li>
       </ul>
+      <!-- <ul class="right hide-on-med-and-down grey-text text-darken-3">
+        <li>
+          <div class="valign-wrapper">
+            <img data-activates="dropdown1" materialize="dropdown" src="../../../assets/profile.png" alt="" class="circle responsive-img">
+          </div>
+
+        </li>
+        <li>
+          <a (click)="loginModal()" class="grey-text text-darken-3">Login/Register</a>
+        </li>
+      </ul> -->
     </div>
   </nav>
 </div>
