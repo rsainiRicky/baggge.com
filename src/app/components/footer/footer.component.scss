@@ -1,30 +1,42 @@
 .page-footer .footer-copyright{
-  min-height: 20px;
-  font-size: 12px;
+  background: #fff;
   padding:5px 0;
+  p{
+    border-top: 1px solid #ddd;
+    color: #666;
+    font-size: 13px;
+    padding: 10px 0;
+  }
 }
 
 .links{
   display:flex;
   flex-direction: column;
-  font-size: 10px;
+  font-size: 13px;
+  a:hover{color:#fff !important;}
+    
 }
 footer{
-  background-color: #fff!important;
-  border-top: 1px solid #f2f2f2;
+  background:#094b75 url('../../../assets/bg-pattern.png') repeat;
+  h6{
+    color: #bfda0a;
+    font-weight: 800;
+  }
 }
 
 .footersign{
   text-align: left;
-  padding: 25px 0;
+  padding: 5px 0;
   font-size: 12px;
   margin:0 auto;
-  color:black;
+  color:#094b75;
   span{
-    font-size: 10px;
+    font-size: 13px;
+    font-weight: 700;
+    color: #094b75;
     text-transform: uppercase;
     padding: 6px 18px 6px 0;
-    border-right: 1px solid #a4a9ac;
+    border-right: 1px solid #ddd;
     margin-right:15px;
   }
   a{
@@ -32,15 +44,14 @@ footer{
     vertical-align: middle;
     margin-right: 15px;
     img{
-     width: 50px;
-    margin-right: 28px;
+     width: 60px;
+    margin-right: 20px;
     }
   }
   img{
       vertical-align: middle;
-    margin-right: 15px;
-   width: 50px;
-    margin-right: 28px;
+      width: 60px;
+      margin-right: 20px;
   }
   .secured{
     margin-left: 18px;
