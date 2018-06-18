@@ -1,4 +1,4 @@
-import { Component, OnInit, EventEmitter, ViewChild } from '@angular/core';
+import { Component, OnInit, EventEmitter, ViewChild, Provider } from '@angular/core';
 import { MobileService } from '../../services/mobile-service.service';
 import { HttpClient } from '@angular/common/http';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
@@ -13,30 +13,23 @@ import { Observable } from 'rxjs/Observable';
   styleUrls: ['./mobile.page.component.scss']
 })
 export class MobilePageComponent implements OnInit {
-  states = [
-    'Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California', 'Colorado', 'Connecticut', 'Delaware',
-    'Florida', 'Georgia', 'Hawaii', 'Idaho', 'Illinois', 'Indiana', 'Iowa', 'Kansas', 'Kentucky',
-    'Louisiana', 'Maine', 'Maryland', 'Massachusetts', 'Michigan', 'Minnesota', 'Mississippi',
-    'Missouri', 'Montana', 'Nebraska', 'Nevada', 'New Hampshire', 'New Jersey', 'New Mexico',
-    'New York', 'North Carolina', 'North Dakota', 'Ohio', 'Oklahoma', 'Oregon', 'Pennsylvania',
-    'Rhode Island', 'South Carolina', 'South Dakota', 'Tennessee', 'Texas', 'Utah', 'Vermont',
-    'Virginia', 'Washington', 'West Virginia', 'Wisconsin', 'Wyoming'
-  ];
+
   serviceProvider;
   isLinear = false;
   firstFormGroup: FormGroup;
   secondFormGroup: FormGroup;
-  providers;
+  providers$: Observable<Provider>;
   constructor(private _formBuilder: FormBuilder, private store: Store<AppState>) {
 
-    store.select('providers').subscribe(data => this.providers = data);
+
   }
   getProviders() {
     this.store.dispatch(new providerAction.GetProvidersAction());
   }
   ngOnInit() {
     this.getProviders();
-    console.log(this.providers);
+    this.providers$ = this.store.select(state => state.providers);
+
   }
 
 }

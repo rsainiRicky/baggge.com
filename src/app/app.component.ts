@@ -5,6 +5,7 @@ import { Observable } from 'rxjs/Observable';
 
 import * as fromStore from './core/reducers';
 import * as providerAction from './core/actions/providers.actions';
+import { Router, NavigationStart } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -18,23 +19,19 @@ export class AppComponent implements OnInit {
   isModalOpen = false;
   isSignup = false;
   title = 'app';
+  isAccount = false;
 
-  tiles = [
-    { text: 'One', cols: 4, rows: 3, color: 'lightblue' },
-    { text: 'Two', cols: 4, rows: 1, color: 'lightgreen' },
-    { text: 'Three', cols: 4, rows: 1, color: 'lightpink' },
-  ];
-
-  constructor() {
-
+  constructor(public router: Router) {
+    this.router.events.subscribe(event => {
+      // tslint:disable-next-line:no-unused-expression
+      (event instanceof NavigationStart) ? (event.url === '/account') ? this.isAccount = true : this.isAccount = false : '';
+    });
   }
   getState(outlet) {
     return outlet.activatedRouteData.state;
   }
   ngOnInit() {
   }
-
-
 
   togglePage() {
     console.log(this.isSignup);

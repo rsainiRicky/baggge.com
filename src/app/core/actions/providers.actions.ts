@@ -13,7 +13,7 @@ export class GetProvidersAction implements Action {
 
 export class GetProvidersSuccessAction implements Action {
   readonly type = GET_PROVIDERS_SUCCESS;
-  constructor(public payload: any) { }
+  constructor(public payload: PROVIDER) { }
 }
 
 export class GetProvidersFailedAction implements Action {

@@ -11,6 +11,7 @@ import { WaterPageComponent } from './pages/water-page/water-page.component';
 import { MetroPageComponent } from './pages/metro-page/metro-page.component';
 import { OffersPageComponent } from './pages/offers-page/offers-page.component';
 import { PagenotFoundComponent } from './pages/pagenot-found/pagenot-found.component';
+import { AccountComponent } from './pages/account/account.component';
 
 export const appRoutes: Routes = [
   { path: 'mobile', component: MobilePageComponent, data: { state: 'home' } },
@@ -23,6 +24,7 @@ export const appRoutes: Routes = [
   { path: 'water', component: WaterPageComponent },
   { path: 'metro', component: MetroPageComponent },
   { path: 'offers', component: OffersPageComponent },
+  { path: 'account', component: AccountComponent },
   {
     path: '',
     redirectTo: 'mobile',

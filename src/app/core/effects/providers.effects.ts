@@ -19,7 +19,7 @@ export class GetProvidersEffects {
     .switchMap(() => this.providerService.getProvider()
       .map(providers => {
         console.log(providers);
-        return new ProviderActions.GetProvidersSuccessAction(providers);
+        return new ProviderActions.GetProvidersSuccessAction(providers['providers']);
       })
     );
 }

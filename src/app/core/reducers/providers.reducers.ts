@@ -40,15 +40,11 @@ export function reducer(state = initialState, action: ProviderAction.Action) {
     //   };
     // }
     case ProviderAction.GET_PROVIDERS_SUCCESS: {
-      return {
-        ...state,
-        isLoading: false,
-        isLoadSuccess: true,
-        providers: action.payload
-      };
+      return Object.assign({}, state.providers)
     }
     default: {
       return state;
     }
   }
 }
+export const getallProviders = (state: State) => state.providers;

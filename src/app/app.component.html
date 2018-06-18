@@ -1,10 +1,10 @@
 <app-navbar></app-navbar>
 <div class="main">
-  <div id="left" class="column">
+  <div *ngIf="!isAccount" id="left" class="column">
     <app-sidebar></app-sidebar>
   </div>
   <div id="right" class="column">
     <router-outlet></router-outlet>
   </div>
 </div>
-<app-footer></app-footer>
+<app-footer *ngIf="!isAccount"></app-footer>

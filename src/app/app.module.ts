@@ -32,6 +32,7 @@ import { GetProvidersEffects } from './core/effects/providers.effects';
 import { reducer } from './core/reducers/providers.reducers';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
+import { AccountComponent } from './pages/account/account.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -52,7 +53,8 @@ import { EffectsModule } from '@ngrx/effects';
     SidebarComponent,
     InfoComponent,
     OfferComponent,
-    OfferCardComponent
+    OfferCardComponent,
+    AccountComponent
   ],
   imports: [
     BrowserModule,

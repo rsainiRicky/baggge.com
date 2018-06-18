@@ -23,12 +23,13 @@
       </div>
     </div>
     <div class="col s12 m3">
-      <select class="icons col s6 displayinline">
+      {{providers$ | async}}
+      <select *ngIf="providers$" class="icons col s6 displayinline">
         <option value="" disabled selected>Operator</option>
-        <option value="" data-icon="images/sample-1.jpg">Airtel</option>
-        <option value="" data-icon="images/office.jpg">Aircel</option>
-        <option value="" data-icon="images/yuna.jpg">Idea</option>
-        <option value="" data-icon="images/yuna.jpg">Vodafone</option>
+
+        <option *ngFor="let provider of providers$ | async" value="provider.provider_code">{{provider}}</option>
+
+
       </select>
       <select class="icons col s6 displayinline">
         <option value="" disabled selected>Circle</option>
@@ -46,5 +47,6 @@
 </div>
 <hr>
 <app-offer [offerDescription]="'Offers on Mobile Recharge'" [limit]="3"></app-offer>
+
 <hr>
 <app-info></app-info>

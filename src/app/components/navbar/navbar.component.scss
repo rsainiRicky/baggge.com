@@ -63,7 +63,6 @@ h2 {
 }
 
 
-
 /* TABS */
 
 h2.inactive {
@@ -330,4 +329,22 @@ form{
   img{
     width:10rem;
   }
+}
+.circle{
+  max-width: 20% !important;
+}
+#notificationDrop.dropdown-content{
+  top:auto !important;
+  width:32em !important;
+  right:0px !important;
+}
+
+.card-panel{
+      box-shadow: none;
+}
+
+#profileDrop.dropdown-content{
+  right: 0px;
+  top: auto !important;
+  width: 22em !important;
 }
