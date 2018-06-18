@@ -1,8 +1,12 @@
 .ad{
-  margin: 5px -15px;
+  margin:30px -15px;
   padding-left:60px;
   .offers{
     display:flex;
     justify-content: space-between;
+  }
+  p{
+    font-size: 13px;
+    margin-bottom: 15px;
   }
 }
