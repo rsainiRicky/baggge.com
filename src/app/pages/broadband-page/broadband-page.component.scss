@@ -26,9 +26,12 @@
 }
 
 select{
-  width:16rem;
-  height: 2.2rem;
-  font-size: 12px;
+  width: 16rem;
+  font-size: 13px;
+  color: #666;
+  margin: 6px 0px;
+  border: 1px solid #ddd;
+  height: 2.6rem;
 }
 
 hr{
@@ -44,8 +47,8 @@ hr{
   margin-top:15px;
 }
 .with-gap[type="radio"]:checked+label:after{
-   background-color: #094b75;
-   border-color: #094b75 ;
+   background-color: #bfda0a;
+   border-color: #bfda0a ;
 }
 .with-gap[type="radio"]:checked+label:before{
   border-color: #094b75 ;
