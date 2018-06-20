@@ -1,50 +1,70 @@
-<div class="container fadeIn animated">
-  <h6>Recharge Your Mobile</h6>
-  <span>Tell us your number and we will do the rest</span>
-  <div class="col s12">
-    <div class="col s12 mr-top-15">
-      <div class="row mr-bt-0">
-        <div class="input-field col s4 mr-bt-0">
-          <input id="last_name" type="tel" class="validate">
-          <label for="last_name">Telephone</label>
-        </div>
-        <div class="row col s4">
-          <div class="col s6" style=" display: flex; ">
-            <p style=" margin-right: 1rem; ">
-              <input class="with-gap amber darken-3" id="male" type="radio" name="gender" value="male" checked />
-              <label for="male">Prepaid</label>
-            </p>
-            <p>
-              <input class="with-gap" id="female" type="radio" name="gender" value="female" checked />
-              <label for="female">Postpaid</label>
-            </p>
+<ul class="collapsible popout">
+  <li class="active">
+    <div class="collapsible-header active">
+      <i class="material-icons">perm_device_information</i>
+      <div class="left">Mobile Recharge -</div>
+    </div>
+    <div class="collapsible-body">
+      <div class="container fadeIn animated">
+        <h6>Recharge Your Mobile</h6>
+        <span>Tell us your number and we will do the rest</span>
+        <div class="col s12">
+          <div class="col s12 mr-top-15">
+            <div class="row mr-bt-0">
+              <div class="input-field col s4 mr-bt-0">
+                <input #tel id="last_name" type="tel" class="validate" (blur)="checkProvider(tel.value)">
+                <label for="last_name">Telephone</label>
+              </div>
+              <div class="row col s4">
+                <div class="col s6" style=" display: flex; ">
+                  <p style=" margin-right: 1rem; ">
+                    <input class="with-gap amber darken-3" id="prepaid" type="radio" name="recharge_type" value="prepaid" />
+                    <label for="prepaid">Prepaid</label>
+                  </p>
+                  <p>
+                    <input class="with-gap" id="postpaid" type="radio" name="recharge_type" value="postpaid" />
+                    <label for="postpaid">Postpaid</label>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col s12 m3">
+            <select *ngIf="providers$" class="icons col s6 displayinline" [(ngModel)]="selectedProvider">
+              <option value="operator" disabled selected>Operator</option>
+              <option *ngFor="let provider of providers$" [value]="provider.provider_code">{{provider.provider_name}}</option>
+            </select>
+            <select class="icons col s6 displayinline" [(ngModel)]="selectedCircle">
+              <option value="circle" disabled selected>Circle</option>
+              <option *ngFor="let circle of circles$" [value]="circle.circle_id">{{circle.circle_name}}</option>
+            </select>
+          </div>
+          <div class="row mr-top-15">
+            <div class="col s6">
+              <a class="waves-effect orange darken-3 waves-light btn">Proceed</a>
+            </div>
           </div>
         </div>
       </div>
     </div>
-    <div class="col s12 m3">
-      {{providers$ | async}}
-      <select *ngIf="providers$" class="icons col s6 displayinline">
-        <option value="" disabled selected>Operator</option>
-
-        <option *ngFor="let provider of providers$ | async" value="provider.provider_code">{{provider}}</option>
-
-
-      </select>
-      <select class="icons col s6 displayinline">
-        <option value="" disabled selected>Circle</option>
-        <option value="" data-icon="images/sample-1.jpg" class="left">Delhi/NCR</option>
-        <option value="" data-icon="images/office.jpg" class="left">Karnataka</option>
-        <option value="" data-icon="images/yuna.jpg" class="left">Haryana</option>
-      </select>
+  </li>
+  <li>
+    <div class="collapsible-header">
+      <i class="material-icons">view_comfy</i>Choose Plans</div>
+    <div class="collapsible-body">
+      <span>Lorem ipsum dolor sit amet.</span>
     </div>
-    <div class="row mr-top-15">
-      <div class="col s6">
-        <a class="waves-effect orange darken-3 waves-light btn">Proceed</a>
-      </div>
+  </li>
+  <li>
+    <div class="collapsible-header">
+      <i class="material-icons">payment</i>Payment</div>
+    <div class="collapsible-body">
+      <span>Lorem ipsum dolor sit amet.</span>
     </div>
-  </div>
-</div>
+  </li>
+</ul>
+
+
 <hr>
 <app-offer [offerDescription]="'Offers on Mobile Recharge'" [limit]="3"></app-offer>
 

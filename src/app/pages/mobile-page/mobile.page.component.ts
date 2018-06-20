@@ -5,7 +5,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { moveIn, fallIn } from '../../router.animations';
 import { AppState } from '../../core/interfaces/providers.interface';
 import * as providerAction from '../../core/actions/providers.actions';
-import { Store } from '@ngrx/store';
+import * as fromRoot from '../../core/reducers/index';
+import { select, Store } from '@ngrx/store';
 import { Observable } from 'rxjs/Observable';
 @Component({
   selector: 'app-mobile.page',
@@ -18,18 +19,50 @@ export class MobilePageComponent implements OnInit {
   isLinear = false;
   firstFormGroup: FormGroup;
   secondFormGroup: FormGroup;
-  providers$: Observable<Provider>;
-  constructor(private _formBuilder: FormBuilder, private store: Store<AppState>) {
+  providers$: any = [];
+  circles$: any = [];
+  selectedProvider = 'operator';
+  selectedCircle = 'circle';
+  constructor(private _formBuilder: FormBuilder, private mobileService: MobileService) { }
 
-
-  }
   getProviders() {
-    this.store.dispatch(new providerAction.GetProvidersAction());
+    this.mobileService.getProvider().subscribe(res => {
+      for (let i = 0; i < Object.keys(res['providers']).length; i++) {
+        if (res['providers'][i].service === 'Mobile Recharge') {
+          this.providers$.push(res['providers'][i]);
+        }
+      }
+    });
   }
+
+  getCircle() {
+    this.mobileService.getCircle().subscribe(res => {
+      this.circles$ = res['circles'];
+    });
+  }
+
+  checkProvider(mobileNumber) {
+    this.mobileService.lookUpProvider(mobileNumber).subscribe(res => {
+      this.providers$.forEach(element => {
+        if (element.provider_name.toLowerCase() === res['operator'].toLowerCase()) {
+          this.selectedProvider = element.provider_code;
+          return;
+        }
+      });
+      this.circles$.forEach(element => {
+        if (element.circle_name.toLowerCase() === res['circle'].toLowerCase()) {
+          this.selectedCircle = element.circle_id;
+        }
+      });
+    });
+  }
+
   ngOnInit() {
     this.getProviders();
-    this.providers$ = this.store.select(state => state.providers);
-
+    this.getCircle();
+    this.mobileService.getPlans().subscribe(res => {
+      console.log(res);
+    });
   }
 
 }

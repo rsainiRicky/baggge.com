@@ -4,11 +4,23 @@ import { Observable } from 'rxjs/Observable';
 
 @Injectable()
 export class MobileService {
+  API_URL = 'http://localhost:8000/api';
 
   constructor(private http: HttpClient) { }
 
   getProvider() {
-    return this.http.get('http://localhost:8000/api/cats');
+    return this.http.get(this.API_URL + '/providers');
   }
 
+  lookUpProvider(mobileNumber) {
+    return this.http.get(this.API_URL + '/findProvider/' + mobileNumber);
+  }
+
+  getCircle() {
+    return this.http.get(this.API_URL + '/getCircle');
+  }
+
+  getPlans() {
+    return this.http.get(this.API_URL + '/getPlans');
+  }
 }

@@ -40,7 +40,7 @@ export function reducer(state = initialState, action: ProviderAction.Action) {
     //   };
     // }
     case ProviderAction.GET_PROVIDERS_SUCCESS: {
-      return Object.assign({}, state.providers)
+      return Object.assign({}, state.providers);
     }
     default: {
       return state;
