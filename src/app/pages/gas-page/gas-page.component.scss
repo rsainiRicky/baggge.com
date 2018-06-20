@@ -26,11 +26,13 @@
 }
 
 select{
-  width:16rem;
-  height: 2.2rem;
-  font-size: 12px;
+  width: 16rem;
+  font-size: 13px;
+  color: #666;
+  margin: 6px 0px;
+  border: 1px solid #ddd;
+  height: 2.6rem;
 }
-
 hr{
   margin: 0 0 0 -15px;
   border: 1px solid #f2f2f2;
