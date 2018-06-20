@@ -3,6 +3,8 @@ const app = express();
 const cors = require('cors');
 require('zone.js/dist/zone-node');
 const bodyParser = require('body-parser');
+const API_URL = 'http://www.cynautix.com/baggee_api/pay2all_api/';
+const API_KEY = '225431774997791';
 app.use(bodyParser.json());
 var request = require('request');
 var corsOptions = {
@@ -30,8 +32,8 @@ app.listen(8000, () => {
   console.log('Server started!');
 });
 
-app.get('/api/cats', (req, res) => {
-  request('http://www.cynautix.com/baggee_api/pay2all_api/get-provider?_format=json', function (error, response, body) {
+app.get('/api/providers', (req, res) => {
+  request(API_URL + 'get-provider?_format=json', function (error, response, body) {
     if (!error && response.statusCode == 200) {
       res.send(body);
     } else {
@@ -39,3 +41,35 @@ app.get('/api/cats', (req, res) => {
     }
   });
 });
+
+app.get('/api/findProvider/:mobileNumber', (req, res) => {
+  request('https://api.datayuge.com/v1/lookup/' + req.params.mobileNumber, function (error, response, body) {
+    if (!error && response.statusCode == 200) {
+      res.send(body);
+    } else {
+      res.sendStatus(response.statusCode);
+    }
+  })
+})
+
+app.get('/api/getCircle/', (req, res) => {
+  request(API_URL + 'get-circle?_format=json', function (error, response, body) {
+    if (!error && response.statusCode == 200) {
+      res.send(body);
+    } else {
+      res.sendStatus(response.statusCode);
+    }
+  });
+});
+
+app.get('/api/getPlans', (req, res) => {
+  request('https://joloapi.com/api/findplan.php?userid=rsaini&key=' + API_KEY + '&opt=28&cir=1&typ=TUP&max=10&type=json', function (error, response, body) {
+    if (!error && response.statusCode == 200) {
+      res.send(body);
+    } else {
+      res.sendStatus(response.statusCode);
+    }
+
+  });
+});
+
